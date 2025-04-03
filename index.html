@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BP Check - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-bold text-blue-600">BP<span class="text-gray-800">Check</span></a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-blue-600 font-medium">Home</a>
+                    <a href="check.html" class="text-gray-600 hover:text-blue-600">Check BP</a>
+                    <a href="history.html" class="text-gray-600 hover:text-blue-600">History</a>
+                    <a href="faq.html" class="text-gray-600 hover:text-blue-600">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-bg h-96 flex items-center">
+            <div class="max-w-6xl mx-auto px-4 text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Monitor Your Blood Pressure</h1>
+                <p class="text-xl mb-8 max-w-2xl">Track and understand your blood pressure readings with our easy-to-use tool</p>
+                <a href="check.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-block">Check Now</a>
+            </div>
+        </section>
+
+        <section class="py-16 max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Monitor Blood Pressure?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-heartbeat"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Early Detection</h3>
+                    <p class="text-gray-600">Identify potential hypertension before symptoms appear</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Track Trends</h3>
+                    <p class="text-gray-600">Monitor changes over time with our history feature</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-book-medical"></i></div>
+                    <h3 class="text-xl font-semibold mb-2">Medical Guidance</h3>
+                    <p class="text-gray-600">Get personalized advice based on your readings</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>© <span id="footerYear">2023</span> BP Check. This tool is for informational purposes only and not medical advice.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

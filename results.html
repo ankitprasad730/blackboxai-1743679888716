@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BP Check - Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bp-category {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-bold text-blue-600">BP<span class="text-gray-800">Check</span></a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="check.html" class="text-gray-600 hover:text-blue-600">Check BP</a>
+                    <a href="history.html" class="text-gray-600 hover:text-blue-600">History</a>
+                    <a href="faq.html" class="text-gray-600 hover:text-blue-600">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-2xl mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold text-center mb-8">Your Blood Pressure Results</h1>
+        
+        <div id="resultsContainer" class="bg-white p-8 rounded-lg shadow-md">
+            <div class="text-center mb-6">
+                <div class="text-5xl font-bold mb-2" id="bpValue">--/--</div>
+                <div id="bpCategory" class="text-xl font-semibold bp-category">Calculating...</div>
+            </div>
+            
+            <div id="adviceContainer" class="p-4 rounded-lg mb-6">
+                <h3 class="text-lg font-semibold mb-3"><i class="fas fa-comment-medical mr-2"></i>Recommendations</h3>
+                <div id="medicalAdvice" class="text-gray-700">
+                    Loading recommendations...
+                </div>
+            </div>
+            
+            <div class="flex space-x-4">
+                <a href="check.html" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg text-center transition duration-300">
+                    <i class="fas fa-redo mr-2"></i>Check Again
+                </a>
+                <a href="history.html" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 rounded-lg text-center transition duration-300">
+                    <i class="fas fa-history mr-2"></i>View History
+                </a>
+            </div>
+        </div>
+        
+        <div class="mt-8 bg-blue-50 p-4 rounded-lg">
+            <h3 class="text-lg font-semibold text-blue-800 mb-2"><i class="fas fa-chart-line mr-2"></i>Understanding Your Results</h3>
+            <p class="text-gray-700 mb-3">Blood pressure categories according to the American Heart Association:</p>
+            <ul class="space-y-2">
+                <li class="flex items-start">
+                    <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">Normal</span>
+                    <span class="text-gray-700">Below 120/80 mmHg</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">Elevated</span>
+                    <span class="text-gray-700">120-129/<80 mmHg</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">Stage 1</span>
+                    <span class="text-gray-700">130-139/80-89 mmHg</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">Stage 2</span>
+                    <span class="text-gray-700">140+/90+ mmHg</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="bg-red-700 text-white text-xs font-bold px-2 py-1 rounded mr-2">Crisis</span>
+                    <span class="text-gray-700">180+/120+ mmHg</span>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const systolic = parseInt(urlParams.get('sys'));
+            const diastolic = parseInt(urlParams.get('dia'));
+            
+            if (isNaN(systolic) || isNaN(diastolic)) {
+                window.location.href = 'check.html';
+                return;
+            }
+            
+            // Display BP values
+            document.getElementById('bpValue').textContent = `${systolic}/${diastolic}`;
+            
+            // Classify BP using shared function
+            const { category, color, advice } = classifyBP(systolic, diastolic);
+            const categoryElement = document.getElementById('bpCategory');
+            categoryElement.textContent = category;
+            categoryElement.classList.add(color);
+            
+            // Display advice
+            document.getElementById('medicalAdvice').innerHTML = advice;
+            document.getElementById('adviceContainer').classList.add(`bg-${color}-100`, `border-l-4`, `border-${color}-500`);
+            
+            // Save to history if not already saved using shared function
+            const currentReading = `${systolic}/${diastolic}`;
+            const history = getBPHistory();
+            const lastReading = history.length > 0 ? `${history[0].systolic}/${history[0].diastolic}` : null;
+            
+            if (currentReading !== lastReading) {
+                saveBPHistory(systolic, diastolic);
+            }
+        });
+    </script>
+</body>
+</html>

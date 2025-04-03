@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BP Check - FAQs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion.active .accordion-content {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-2xl font-bold text-blue-600">BP<span class="text-gray-800">Check</span></a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="check.html" class="text-gray-600 hover:text-blue-600">Check BP</a>
+                    <a href="history.html" class="text-gray-600 hover:text-blue-600">History</a>
+                    <a href="faq.html" class="text-blue-600 font-medium">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-12">
+        <h1 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h1>
+        
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="accordion-group space-y-1">
+                <!-- FAQ Item 1 -->
+                <div class="accordion border-b border-gray-200">
+                    <button class="accordion-btn w-full text-left px-6 py-4 font-medium text-lg hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span>What is a normal blood pressure reading?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4 text-gray-700">
+                        <p class="mb-3">A normal blood pressure reading is typically around <strong>120/80 mmHg</strong> or lower. According to the American Heart Association:</p>
+                        <ul class="space-y-2 mb-3">
+                            <li><span class="font-semibold">Normal:</span> Less than 120/80 mmHg</li>
+                            <li><span class="font-semibold">Elevated:</span> 120-129/less than 80 mmHg</li>
+                            <li><span class="font-semibold">Stage 1 Hypertension:</span> 130-139/80-89 mmHg</li>
+                            <li><span class="font-semibold">Stage 2 Hypertension:</span> 140+/90+ mmHg</li>
+                            <li><span class="font-semibold">Hypertensive Crisis:</span> 180+/120+ mmHg (seek immediate medical attention)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="accordion border-b border-gray-200">
+                    <button class="accordion-btn w-full text-left px-6 py-4 font-medium text-lg hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span>How often should I check my blood pressure?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4 text-gray-700">
+                        <p class="mb-3">The frequency depends on your health status:</p>
+                        <ul class="space-y-2">
+                            <li><strong>Normal readings:</strong> Check every 1-2 years if you have no risk factors</li>
+                            <li><strong>Elevated readings:</strong> Check at least once a month</li>
+                            <li><strong>Hypertension:</strong> As directed by your doctor (often daily or weekly)</li>
+                            <li><strong>New medication:</strong> May need to check multiple times per day initially</li>
+                        </ul>
+                        <p class="mt-3">For the most accurate tracking, take readings at the same time each day, preferably in the morning before medications and in the evening before bed.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="accordion border-b border-gray-200">
+                    <button class="accordion-btn w-full text-left px-6 py-4 font-medium text-lg hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span>What factors can affect my blood pressure reading?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4 text-gray-700">
+                        <p>Many temporary factors can influence your blood pressure:</p>
+                        <div class="grid md:grid-cols-2 gap-4 mt-3">
+                            <div>
+                                <h4 class="font-semibold mb-2">Common Elevators</h4>
+                                <ul class="space-y-1">
+                                    <li>Stress or anxiety</li>
+                                    <li>Caffeine consumption</li>
+                                    <li>Recent exercise</li>
+                                    <li>Full bladder</li>
+                                    <li>Nicotine use</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Common Reducers</h4>
+                                <ul class="space-y-1">
+                                    <li>Deep breathing exercises</li>
+                                    <li>Proper hydration</li>
+                                    <li>Regular physical activity</li>
+                                    <li>Meditation/relaxation</li>
+                                    <li>Medications</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="accordion border-b border-gray-200">
+                    <button class="accordion-btn w-full text-left px-6 py-4 font-medium text-lg hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span>How accurate is this tool?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4 text-gray-700">
+                        <p class="mb-3">This tool provides <strong>general information</strong> based on standard blood pressure classification guidelines from the American Heart Association. However, there are important limitations:</p>
+                        <ul class="space-y-2 mb-3">
+                            <li>It cannot replace professional medical advice</li>
+                            <li>Accuracy depends on correct input of your readings</li>
+                            <li>Individual health factors may affect interpretation</li>
+                            <li>Doesn't account for medications or specific conditions</li>
+                        </ul>
+                        <p>Always consult with your healthcare provider about your blood pressure readings and what they mean for your specific health situation.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="accordion border-b border-gray-200">
+                    <button class="accordion-btn w-full text-left px-6 py-4 font-medium text-lg hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span>What should I do if my reading is high?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4 text-gray-700">
+                        <p class="mb-3">If you get a high reading:</p>
+                        <ol class="space-y-2 list-decimal list-inside mb-3">
+                            <li><strong>Stay calm</strong> - anxiety can raise blood pressure further</li>
+                            <li><strong>Retake</strong> after 5 minutes of quiet sitting</li>
+                            <li><strong>Check</strong> your technique (arm position, cuff placement)</li>
+                            <li><strong>Track</strong> multiple readings over time</li>
+                            <li><strong>Contact</strong> your doctor if consistently high</li>
+                        </ol>
+                        <p class="font-semibold text-red-600">Seek immediate medical attention if:</p>
+                        <ul class="space-y-1">
+                            <li>Reading is 180/120 mmHg or higher</li>
+                            <li>You experience severe headache, chest pain, or vision changes</li>
+                            <li>You have difficulty breathing or neurological symptoms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="accordion border-b border-gray-200">
+                    <button class="accordion-btn w-full text-left px-6 py-4 font-medium text-lg hover:bg-gray-50 transition duration-200 flex justify-between items-center">
+                        <span>How is my data stored and protected?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-200"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4 text-gray-700">
+                        <p class="mb-3">Your blood pressure data is stored <strong>locally</strong> in your browser's storage:</p>
+                        <ul class="space-y-2 mb-3">
+                            <li>Data never leaves your device</li>
+                            <li>No information is sent to any servers</li>
+                            <li>You can clear your history at any time</li>
+                            <li>Data persists until you clear browser storage</li>
+                        </ul>
+                        <p>For added privacy, you may want to:</p>
+                        <ul class="space-y-1">
+                            <li>Use private/incognito browsing mode</li>
+                            <li>Clear your browsing data regularly</li>
+                            <li>Not use this tool on shared devices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+            <h2 class="text-xl font-semibold mb-4">Still have questions?</h2>
+            <p class="mb-4">Consult these reliable sources for more information:</p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <a href="https://www.heart.org/en/health-topics/high-blood-pressure" target="_blank" class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-200 flex items-center">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-heart text-red-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">American Heart Association</h3>
+                        <p class="text-sm text-gray-600">High Blood Pressure Resources</p>
+                    </div>
+                </a>
+                <a href="https://www.cdc.gov/bloodpressure/index.htm" target="_blank" class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-200 flex items-center">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-shield-alt text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">CDC</h3>
+                        <p class="text-sm text-gray-600">High Blood Pressure Facts</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordions = document.querySelectorAll('.accordion');
+            
+            accordions.forEach(accordion => {
+                const btn = accordion.querySelector('.accordion-btn');
+                const icon = btn.querySelector('i');
+                
+                btn.addEventListener('click', () => {
+                    // Toggle active class on accordion
+                    accordion.classList.toggle('active');
+                    
+                    // Rotate icon
+                    icon.classList.toggle('rotate-180');
+                    
+                    // Close other accordions
+                    accordions.forEach(otherAccordion => {
+                        if (otherAccordion !== accordion && otherAccordion.classList.contains('active')) {
+                            otherAccordion.classList.remove('active');
+                            otherAccordion.querySelector('i').classList.remove('rotate-180');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
